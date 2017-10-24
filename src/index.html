@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Emma O'Neill web developer news applications research engineering</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="__sync_contentCategory" content="meterA">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth|Asap+Condensed|Dosis:500|Fira+Sans+Condensed:300,400|Gentium+Basic|Gentium+Book+Basic|Kreon:400,700|Signika+Negative:300,400|Sintony|Source+Sans+Pro:400,600" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="./assets/photos/favicon.ico?" type="image/x-icon">
+
+  </head>
+
+  <body>
+
+    <div class="heading-container">
+      <div class="name">Emma O'Neill</div>
+      <div class="icon-wrapper">
+        <div class="icon"><a href="mailto:emmaruthoneill@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>
+        <div class="icon"><a href="https://twitter.com/emmaruthoneill" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+        <div class="icon"><a href="https://github.com/emro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+      </div>
+
+      <div class="download-button"><a href="./assets/Resume.pdf" download="EmmaONeillResume.pdf">Download résumé</a></div>
+
+      <div id="stick-here"></div>
+      <div class="nav-bar" id="stick-me">
+        <div class="link-container desktop">
+          <div class="link"><a href="#sfchron">San Francisco Chronicle</a></div>
+          <div class="link"><a href="#seattletimes">Seattle Times</a></div>
+          <div class="link"><a href="#research">Research publications</a></div>
+        </div>
+        <div class="link-container mobile">
+          <div class="link"><a href="#sfchron">SF Chronicle</a></div>
+          <div class="link"><a href="#seattletimes">Seattle Times</a></div>
+          <div class="link"><a href="#research">Research</a></div>
+        </div>
+      </div>
+      <div id="stick-ph"></div>
+
+      <div class="bio" id="bio">
+        <p>I have a Bachelor's degree in Mathematics from Haverford College and a Master's degree in Computational and Mathematical Engineering from Stanford University. I worked for many years as a research engineer at SRI International before learning to develop interactive news applications at the Seattle Times and ultimately joining the San Francisco Chronicle's digital team.</p>
+
+        <p>I am an expert problem-solver and programmer, with years of experience with diverse datasets. I am passionate about visual storytelling and I find it incredibly rewarding to employ my research and programming skills to create tools for the public and to tell important stories.</p>
+      </div>
+
+    </div>
+
+    <div class="section-hed" id="sfchron">San Francisco Chronicle publications</div>
+    <div class="story-container">
+    <% json.SFChron.forEach(function(d) { %>
+
+      <div class="story">
+        <a href="<%=d.link%>" target="_blank">
+          <div class="photo">
+            <img src="<%=d.photo%>?v=4"></img>
+          </div>
+          <div class="hed"><%=d.head%></div>
+          <div class="deck"><%=d.deck%></div>
+        </a>
+      </div>
+
+    <% }) %>
+    </div>
+
+    <div class="section-hed" id="seattletimes">Seattle Times publications</div>
+    <div class="story-container">
+    <% json.SeattleTimes.forEach(function(d) { %>
+
+      <div class="story">
+        <a href="<%=d.link%>" target="_blank">
+          <div class="photo">
+            <img src="<%=d.photo%>?v=3"></img>
+          </div>
+          <div class="hed"><%=d.head%></div>
+          <div class="deck"><%=d.deck%></div>
+        </a>
+      </div>
+
+    <% }) %>
+    </div>
+
+    <div class="section-hed" id="research">Research publications</div>
+    <div class="publications-container">
+      <p><div class="publication">Stolaroff, J.K., C.S Samaras, E.R. O’Neill, A.M. Lubers, A.S. Michell, D.P. Ceperley. “Energy use and life cycle greenhouse gas emissions of drones for commercial package delivery,” Nature Communications, Accepted.</div></p>
+      <p><div class="publication">Sparr, R.H., E.R. O'Neill, and D.P. Ceperley, “Bayesian Network Processing of Penetrating Radar Scattering for Building Reconstruction,” Military Sensing Symposia Tri-Service Radar Symposium, Orlando, Florida, 2010.</div></p>
+      <p><div class="publication">Sharpee, B.D., E.R. O’Neill, and T.G. Slanger. <a href="http://onlinelibrary.wiley.com/doi/10.1029/2007JA013010/full" target="_blank">“Astronomical Sky Spectra from the 29-31 October 2003 Geomagnetic Superstorms: Observations of O+(2D0-4S0) and Other Emissions”</a>, Journal of Geophysical Research: Space Physics, 2008.</div></p>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-hed">Contact me:
+        <div class="icon"><a href="mailto:emmaruthoneill@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></div>
+        <div class="icon"><a href="https://twitter.com/emmaruthoneill" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+        <div class="icon"><a href="https://github.com/emro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+      </div>
+      <div class="last-updated">Last updated on: October 23, 2017</div>
+    </div>
+
+    <script src="app.js" async></script>
+    <%= t.include("partials/_helloSFC.html") %>
+
+  </body>
+</html>

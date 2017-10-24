@@ -1,0 +1,17 @@
+{
+  "year":"2017",
+  "sheets": ["1elJ17ezzlkXQVfp6b9sBM8pZZSxfcOs2N6sXRVl8sf0"],
+  "docsID":"",
+  "production": true,
+  "embedded": false,
+  "s3": {
+    "stage": {
+      "bucket": "emmaruthoneill.com",
+      "path": "/portfolio/"
+    },
+    "live": {
+      "bucket": "emmaruthoneill.com",
+      "path": "/portfolio/"
+    }
+  }
+}
