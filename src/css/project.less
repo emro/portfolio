@@ -48,9 +48,10 @@ body {
 }
 
 .download-button {
-  margin: 20px 0;
+  // margin: 20px 20px 0 0;
+  margin-left: 5px;
   background: lighten(@highlight,5%);
-  padding: 5px 20px;
+  padding: 4px 10px;
   border-radius: 2px;
   display: inline-block;
   a {
@@ -99,14 +100,17 @@ body {
 }
 
 .heading-container {
-  padding: 30px 0;
+  padding: 40px 0 30px 0;
+  @media @mobile {
+    padding: 30px 0;
+  }
   // border-bottom: 1px solid #b2b2b2;
   // margin-bottom: 20px;
   .name {
     font-size: 40px;
   }
   .bio {
-    padding: 10px 0 0 0;
+    padding: 15px 0 0 0;
   }
   .nav-bar {
     .link {
