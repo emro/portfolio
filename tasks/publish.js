@@ -68,7 +68,6 @@ module.exports = function(grunt) {
       grunt.fail.fatal("You must specify a destination path in your project.json.");
     }
 
-    // console.log();
     // var creds = {
     //   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
     //   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
