@@ -48,20 +48,42 @@
     </div>
 
     <div class="section-hed" id="sfchron">San Francisco Chronicle publications</div>
-    <div class="story-container">
-    <% json.SFChron.forEach(function(d) { %>
+    <div class="outer-story-container">
+      <div class="sub-hed">Top stories</div>
+      <div class="story-container sfchron">
+      <% var currentCat = "Top stories" %>
+      <% json.SFChron.forEach(function(d) { %>
+        <% if (currentCat == d.category) { %>
 
-      <div class="story">
-        <a href="<%=d.link%>" target="_blank">
-          <div class="photo">
-            <img src="<%=d.photo%>?v=4"></img>
+          <div class="story">
+            <a href="<%=d.link%>" target="_blank">
+              <div class="photo">
+                <img src="<%=d.photo%>?v=4"></img>
+              </div>
+              <div class="hed"><%=d.head%></div>
+              <div class="deck"><%=d.deck%></div>
+            </a>
           </div>
-          <div class="hed"><%=d.head%></div>
-          <div class="deck"><%=d.deck%></div>
-        </a>
-      </div>
 
-    <% }) %>
+        <% } else { %>
+
+          <% currentCat = d.category; %>
+          </div>
+          <div class="sub-hed"><%=d.category%></div>
+          <div class="story-container sfchron">
+            <div class="story">
+              <a href="<%=d.link%>" target="_blank">
+                <div class="photo">
+                  <img src="<%=d.photo%>?v=4"></img>
+                </div>
+                <div class="hed"><%=d.head%></div>
+                <div class="deck"><%=d.deck%></div>
+              </a>
+            </div>
+        <% } %>
+
+      <% }) %>
+      </div>
     </div>
 
     <div class="section-hed" id="seattletimes">Seattle Times publications</div>
