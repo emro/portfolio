@@ -11,6 +11,16 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <link rel="shortcut icon" href="./assets/photos/favicon.ico?" type="image/x-icon">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119963070-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119963070-1');
+    </script>
+
   </head>
 
   <body>
@@ -49,11 +59,15 @@
 
     <div class="section-hed" id="sfchron">San Francisco Chronicle publications</div>
     <div class="outer-story-container">
-      <div class="sub-hed">Top stories</div>
+      <!-- <div class="sub-hed">Top stories</div> -->
+      <div class="sub-hed">Visual explainers</div>
       <div class="story-container sfchron">
-      <% var currentCat = "Top stories" %>
+      <!-- <% var currentCat = "Top stories" %> -->
+      <% var currentCat = "Visual explainers" %>
       <% json.SFChron.forEach(function(d) { %>
         <% if (currentCat == d.category) { %>
+
+          <% if (d.link){ %>
 
           <div class="story">
             <a href="<%=d.link%>" target="_blank">
@@ -64,6 +78,18 @@
               <div class="deck"><%=d.deck%></div>
             </a>
           </div>
+
+          <% } else { %>
+
+          <div class="story">
+              <div class="photo-replacement">
+                <div class="overlay">Coming soon! Check back on June 5!</div>
+              </div>
+              <div class="hed"><%=d.head%></div>
+              <div class="deck"><%=d.deck%></div>
+          </div>
+
+          <% } %>
 
         <% } else { %>
 
@@ -116,7 +142,7 @@
         <div class="icon"><a href="https://twitter.com/emmaruthoneill" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
         <div class="icon"><a href="https://github.com/emro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div>
       </div>
-      <div class="last-updated">Last updated on: March 16, 2018</div>
+      <div class="last-updated">Last updated on: May 28, 2018</div>
     </div>
 
     <script src="app.js" async></script>
