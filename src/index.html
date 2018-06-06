@@ -60,14 +60,12 @@
     <div class="section-hed" id="sfchron">San Francisco Chronicle publications</div>
     <div class="outer-story-container">
       <!-- <div class="sub-hed">Top stories</div> -->
-      <div class="sub-hed">Visual explainers</div>
+      <div class="sub-hed">Elections</div>
       <div class="story-container sfchron">
       <!-- <% var currentCat = "Top stories" %> -->
-      <% var currentCat = "Visual explainers" %>
+      <% var currentCat = "Elections" %>
       <% json.SFChron.forEach(function(d) { %>
         <% if (currentCat == d.category) { %>
-
-          <% if (d.link){ %>
 
           <div class="story">
             <a href="<%=d.link%>" target="_blank">
@@ -78,18 +76,6 @@
               <div class="deck"><%=d.deck%></div>
             </a>
           </div>
-
-          <% } else { %>
-
-          <div class="story">
-              <div class="photo-replacement">
-                <div class="overlay">Coming soon! Check back on June 5!</div>
-              </div>
-              <div class="hed"><%=d.head%></div>
-              <div class="deck"><%=d.deck%></div>
-          </div>
-
-          <% } %>
 
         <% } else { %>
 
@@ -142,7 +128,7 @@
         <div class="icon"><a href="https://twitter.com/emmaruthoneill" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
         <div class="icon"><a href="https://github.com/emro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div>
       </div>
-      <div class="last-updated">Last updated on: May 28, 2018</div>
+      <div class="last-updated">Last updated on: June 6, 2018</div>
     </div>
 
     <script src="app.js" async></script>
